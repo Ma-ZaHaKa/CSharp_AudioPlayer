@@ -1,2 +1,2 @@
-            AudioPlayer.INSTANCE.PlayAudio(soundFilePath);
-            AudioPlayer.INSTANCE.SetAudioVolume(config.volume);
+            AudioPlayer.INSTANCE.PlayAudio(soundFilePath, false);
+            AudioPlayer.INSTANCE.SetAudioVolume(config.volume); // on volume change (SiticoneTaskBar)
