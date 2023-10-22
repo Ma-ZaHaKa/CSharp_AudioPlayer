@@ -51,7 +51,7 @@ namespace GTAChaos.Utils
 
 
 
-        public async Task PlayAudio(string path)
+        public async Task PlayAudio(string path, bool stop_prev = false)
         {
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -66,7 +66,7 @@ namespace GTAChaos.Utils
             }
 
             // Play the audio asynchronously
-            await PlayAudioFile(path);
+            await PlayAudioFile(path, stop_prev);
         }
 
 
@@ -118,7 +118,7 @@ namespace GTAChaos.Utils
             waveOutEvent.PlaybackStopped += (sender, e) =>
             {
                 var matchingWave = WavesEvents.FirstOrDefault(item => item == waveOutEvent);
-                matchingWave.Dispose();
+                if (matchingWave != null) { matchingWave.Dispose(); }
                 WavesEvents.Remove(matchingWave);
                 waveOutEvent.Dispose(); // на всякий
             };
