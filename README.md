@@ -1,8 +1,8 @@
 # CSharp_AudioPlayer
 Audio Player
 HOW TO USE?<br><br>
-AudioPlayer.INSTANCE.PlayAudio(soundFilePath); // on any play event<br>
-AudioPlayer.INSTANCE.SetAudioVolume(config.volume); // on scroll ui sound
+AudioPlayer.INSTANCE.PlayAudio(soundFilePath, false); // on any play event<br>
+AudioPlayer.INSTANCE.SetAudioVolume(config.volume); // on volume change (SiticoneTaskBar)
 
 
 LIBS<br>
